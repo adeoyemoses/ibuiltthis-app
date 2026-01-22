@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "iBuiltThis",
+  title: "iBuiltThis - Share Your Creations, Discover New Launches",
   description:
-    "iBuiltThis is a platform for creating and sharing your own project with the world",
+    "A community platform for creators to showcase their apps, AI tools, SaaS products, and creative projects. Authentic launches, real builders, genuine feedback.",
 };
 
 export default function RootLayout({
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Font added to the entire application */}
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${outfit.className} antialiased`}>{children}</body>
     </html>
   );
 }

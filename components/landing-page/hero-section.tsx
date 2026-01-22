@@ -1,7 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, SparklesIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  EyeIcon,
+  RocketIcon,
+  SparklesIcon,
+  UsersIcon,
+} from "lucide-react";
 import Link from "next/link";
+import StatsCard from "@/components/stats-card";
 
 const LiveBadge = () => {
   return (
@@ -19,6 +26,25 @@ const LiveBadge = () => {
     </Badge>
   );
 };
+
+const statsData = [
+  {
+    icon: RocketIcon,
+    value: "2.5K+",
+    label: "Projects Shared",
+  },
+  {
+    icon: UsersIcon,
+    value: "10K+",
+    label: "Active Creators",
+    hasBorder: true,
+  },
+  {
+    icon: EyeIcon,
+    value: "50K+",
+    label: "Monthly Visitors",
+  },
+];
 
 export default function HeroSection() {
   return (
@@ -53,6 +79,12 @@ export default function HeroSection() {
                 <ArrowRightIcon className="size-5" />
               </Link>
             </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-2xl w-full">
+            {statsData.map((stat) => (
+              <StatsCard key={stat.label} {...stat} />
+            ))}
           </div>
         </div>
       </div>
